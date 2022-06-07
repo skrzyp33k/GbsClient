@@ -4,7 +4,7 @@ import java.io.*;
 import java.net.*;
 
 /**
- * This class contains everything is required to handle sending and recieving messages via TCP Socket
+ * This class contains everything is required to handle sending and receiving messages via TCP Socket
  */
 public class GbsClient {
     /**
