@@ -72,8 +72,7 @@ public class GbsClient {
      * @param messageToSend Message to be sent.
      * @return Message to be recievied.
      */
-    public GbsMessage executeRequest(GbsMessage messageToSend)
-    {
+    public GbsMessage executeRequest(GbsMessage messageToSend) throws IOException {
         Socket socket = null;
         ObjectOutputStream toServer = null;
         ObjectInputStream fromServer = null;
@@ -87,6 +86,7 @@ public class GbsClient {
             replyMessage = (GbsMessage) fromServer.readObject();
         } catch (IOException e) {
             e.printStackTrace();
+            throw e;
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
             System.exit(1);
