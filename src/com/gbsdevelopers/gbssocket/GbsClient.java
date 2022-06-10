@@ -70,12 +70,12 @@ public class GbsClient {
     /**
      * Function which sends a request and then receives it.
      * @param messageToSend Message to be sent.
-     * @return Message to be recievied.
+     * @return Message to be received.
      */
     public GbsMessage executeRequest(GbsMessage messageToSend) throws IOException {
         Socket socket = null;
-        ObjectOutputStream toServer = null;
-        ObjectInputStream fromServer = null;
+        ObjectOutputStream toServer;
+        ObjectInputStream fromServer;
         GbsMessage replyMessage = null;
         try {
             socket = new Socket(hostName, serverPort);
